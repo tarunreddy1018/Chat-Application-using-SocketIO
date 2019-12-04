@@ -32,8 +32,7 @@ const Chat = ({ location }) => {
         setRoom(room);
 
         socket.emit('join', { name, room });
-
-        console.log('first');
+        
     }, [ENDPOINT, location.search]);
 
     useEffect(() => {
@@ -68,37 +67,50 @@ const Chat = ({ location }) => {
         }
     };
 
-    let res = null;
-    if(errorMessage !== '') {
-        res = (
-                <Redirect to={{
-                            pathname: '/',
-                            errorMessage: errorMessage
-                }} />
-        );
-    }
-    else {
-        res = (
-            <div className="outerContainer">
-                <div className="innerContainer">
-                    <div className="container">
-                        <InfoBar room={room} />
-                        <Messages messages={messages} name={name} />
-                        <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-                    </div>
-                    <div className="onlineList">
-                        <div className="heading">
-                            <h2>Users Online</h2>
+    let isAuthenticated = sessionStorage.getItem("isAuthenticated");
+    let component = null;
+
+    if(isAuthenticated) {
+        if(errorMessage !== '') {
+            component = (
+                    <Redirect to={{
+                                pathname: '/join',
+                                errorMessage: errorMessage
+                    }} />
+            );
+        }
+        else {
+            component = (
+                <div className="outerContainer">
+                    <div className="innerContainer">
+                        <div className="container">
+                            <InfoBar room={room} />
+                            <Messages messages={messages} name={name} />
+                            <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
                         </div>
-                        <div className="container2 scrollBottom">
-                            <UsersList users={users} />
+                        <div className="onlineList">
+                            <div className="heading">
+                                <h2>Users Online</h2>
+                            </div>
+                            <div className="container2 scrollBottom">
+                                <UsersList users={users} />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        );
+            );
+        }
     }
-    return res;
+    else {
+        component = <Redirect to={
+            {
+                pathname: '/login',
+                errorMessage: 'Please login before you continue' 
+            }
+        } />
+    }
+   
+    return component;
 };
 
 export default Chat;

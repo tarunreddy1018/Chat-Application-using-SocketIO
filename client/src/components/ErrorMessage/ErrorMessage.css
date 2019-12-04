@@ -1,3 +1,27 @@
-.errorMessage {
-    
-}
+  .user-message {
+    margin: auto;
+    margin-top: 10px;
+    width: 90%;
+    border: 1px solid #4771fa;
+    padding: 0.5rem;
+    border-radius: 3px;
+    background: #b9c9ff;
+    text-align: center;
+    animation: slide 1s ease forwards;
+  }
+
+  @keyframes slide {
+    0%{ transform: translateY(-1000px) }
+    70%{ transform: translateY(70px) }
+    100%{ }
+  }
+  
+  .user-message--error {
+    border-color: red;
+    background: rgb(202, 169, 169);
+    color: red;
+  }
+
+  .joinError {
+    margin: 0;
+  }

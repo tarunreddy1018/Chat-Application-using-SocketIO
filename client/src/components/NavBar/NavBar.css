@@ -1,0 +1,61 @@
+.leftPart-itemlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 2;
+    height: 100%;
+    align-items: center;
+}
+
+.rightPart-itemlist {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-grow: 0.5;
+    height: 100%;
+    align-items: center;
+}
+
+.navBar {
+    display: flex;
+    height: 3.5rem;
+}
+
+.link {
+    text-decoration: none;
+    font-size: large;
+    color: white;
+}
+
+.navBar {
+    background-color: rgb(135, 78, 240);
+}
+
+.leftPart-listitem {
+    margin: 0 10px;
+}
+
+.rightPart-listitem {
+    flex-grow: 1;
+}
+
+.active {
+    color: rgb(100, 253, 29);
+    padding: 5px;
+    border: 1px solid rgb(100, 253, 29);
+    border-radius: 2px;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.logout {
+    cursor: pointer;
+}

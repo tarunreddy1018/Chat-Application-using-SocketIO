@@ -20,7 +20,6 @@ html, body {
     height: 100vh;
     align-items: center;
     background-color: rgb(116, 116, 235);
-
   }
   
   .joinInnerContainer {
@@ -53,6 +52,10 @@ html, body {
     border-bottom: 2px solid white;
   }
   
+  .joinButton {
+    cursor: pointer;
+  }
+
   .button {
       color: black !important;
       text-transform: uppercase;

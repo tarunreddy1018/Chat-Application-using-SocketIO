@@ -126,7 +126,7 @@ const checkIfUserNameIsPresent = (name, roomName) => {
                     return errorMessage;
                 }
                 else {
-                    errorMessage = `A User with name ${name} already exists in the room ${roomName}`;
+                    errorMessage = `A user with name ${name} already exists in the room ${roomName}`;
                     return errorMessage;
                 }
             }

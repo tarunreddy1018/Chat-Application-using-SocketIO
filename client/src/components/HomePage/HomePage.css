@@ -1,0 +1,15 @@
+.homeImage {
+    width: 350px;
+    height: 100%;
+    margin: auto;
+    margin-top: 80px;
+}
+
+.homeImage img {
+    width: 100%;
+}
+
+.homeImage img:hover {
+    transform: rotate(360deg);
+    transition-duration: 2s;
+}
